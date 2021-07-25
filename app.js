@@ -4,7 +4,7 @@ const cors = require('cors');
 const mongoose = require("mongoose");
 const app = express();
 const port = 2021;
-const base_url = "http://34.69.185.238:"+port+"/";
+const base_url = "http://localhost:"+port+"/";
 
 const log = require('simple-node-logger').createSimpleLogger('project.log');
 
@@ -18,7 +18,7 @@ app.use(function (req, res, next) {
 });
 app.use(cors());
 
-mongoose.connect("mongodb://34.69.185.238:27017/project1", {
+mongoose.connect("mongodb://localhost:27017/project1", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false,
