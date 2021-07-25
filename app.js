@@ -6,6 +6,8 @@ const app = express();
 const port = 2021;
 const base_url = "http://34.69.185.238:"+port+"/";
 
+const log = require('simple-node-logger').createSimpleLogger('project.log');
+
 app.set('base_url', base_url);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -30,6 +32,7 @@ app.post('/admin_chk', async (req, res, next) => {
       status: "success",
       message: "api running",
   };
+  log.info('simple log file=======>>>>>>>', obj);
 res.json(obj);
 });
 
@@ -38,6 +41,7 @@ const route = require("./routes");
 console.log("Routes initializing");
 app.use("/", route);
 app.listen(port, () => {
+  log.info('PORT =======>>>>>>>', base_url);
   console.log(`Example app listening at `+base_url)
 })
 
