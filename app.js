@@ -25,6 +25,15 @@ mongoose.connect("mongodb://34.69.185.238:27017/project1", {
 mongoose.connection.on("error", (err) => console.error(err));
 mongoose.connection.once("open", () => console.log("Connected to mongoDB!"));
 
+app.post('/admin_chk', async (req, res, next) => {
+  obj = {
+      status: "success",
+      message: "api running",
+  };
+res.json(obj);
+});
+
+
 const route = require("./routes");
 console.log("Routes initializing");
 app.use("/", route);
