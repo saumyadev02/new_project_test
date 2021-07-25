@@ -1,0 +1,18 @@
+//================ LIVE setup ================
+###
+POST http://localhost:2021/api/addCustomer
+content-type: application/json
+
+{
+	"name": "Customer 5",
+	"email": "customer5@gmail.com",
+	"phone": "9875563525",
+	"custom": "customer attribute field",
+	"gender": "male"	
+}
+
+###
+POST http://localhost:2021/api/sendNotificationCustomer
+content-type: application/json
+
+
