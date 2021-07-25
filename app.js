@@ -4,7 +4,7 @@ const cors = require('cors');
 const mongoose = require("mongoose");
 const app = express();
 const port = 2021;
-const base_url = "http://localhost:"+port+"/";
+const base_url = "http://34.69.185.238:"+port+"/";
 
 app.set('base_url', base_url);
 app.use(bodyParser.json());
@@ -16,7 +16,7 @@ app.use(function (req, res, next) {
 });
 app.use(cors());
 
-mongoose.connect("mongodb://localhost:27017/project1", {
+mongoose.connect("mongodb://34.69.185.238:27017/project1", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false,
