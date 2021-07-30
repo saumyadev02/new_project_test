@@ -24,11 +24,21 @@ app.post("/test_check", async (req, res) => {
 res.json(obj);
 });
 
-mongoose.connect("mongodb://localhost:27017/project1", {
+// mongoose.connect("mongodb://localhost:27017/project1", {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+//   useFindAndModify: false,
+// });
+
+mongoose.connect('mongodb+srv://saumya:saumya@123@cluster0.hujie.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false,
 });
+
+
+
+
 
 mongoose.connection.on("error", (err) => console.error(err));
 mongoose.connection.once("open", () => console.log("Connected to mongoDB!"));
