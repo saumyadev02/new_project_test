@@ -6,6 +6,8 @@ const app = express();
 const port = 2021;
 const base_url = "http://localhost:"+port+"/";
 
+const log = require('simple-node-logger').createSimpleLogger('project.log');
+
 app.set('base_url', base_url);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -21,6 +23,15 @@ app.post("/test_check", async (req, res) => {
     status: "success",
     message: "check test",
     };
+res.json(obj);
+});
+
+app.get("/test_check_get", async (req, res) => {
+  obj = {
+    status: "success get",
+    message: "check test",
+    };
+    log.info('simple log file=======>>>>>>>', obj);
 res.json(obj);
 });
 
