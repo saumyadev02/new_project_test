@@ -35,17 +35,13 @@ app.get("/test_check_get", async (req, res) => {
 res.json(obj);
 });
 
-// mongoose.connect("mongodb://localhost:27017/project1", {
-//   useNewUrlParser: true,
-//   useUnifiedTopology: true,
-//   useFindAndModify: false,
-// });
-
-mongoose.connect('mongodb+srv://saumya:saumya@123@cluster0.hujie.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
+mongoose.connect("mongodb://localhost:27017/project1", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false,
 });
+
+
 
 
 
