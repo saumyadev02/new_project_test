@@ -4,9 +4,25 @@ POST http://localhost:2021/api/addCustomer
 content-type: application/json
 
 {
-	"name": "Customer 5",
-	"email": "customer5@gmail.com",
-	"phone": "9875563525",
+	"name": "Customer 1",
+	"email": "customer1@gmail.com",
+	"phone": "9871163121",
+	"custom": "customer attribute field",
+	"attr_value_1": "customer attr_value_1111 value",
+	"attr_value_2": "customer attr_value_2222 value",
+	"attr_value_3": "customer attr_value_3333 value",
+	"attr_value_4": "customer attr_value_4444 value",
+	"gender": "male"	
+}
+
+###
+POST http://34.69.185.238:2021/api/addCustomer
+content-type: application/json
+
+{
+	"name": "Customer 1",
+	"email": "customer1@gmail.com",
+	"phone": "9871163121",
 	"custom": "customer attribute field",
 	"gender": "male"	
 }

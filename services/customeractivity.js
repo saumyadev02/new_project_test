@@ -8,6 +8,7 @@ const addcustomer = async (formData) => {
     email: formData.email,
     phone: formData.phone,
     custom: formData.custom,
+    attribute: formData.attribute,
     gender: formData.gender,
     createOn: Date.now(),
   });

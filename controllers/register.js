@@ -7,20 +7,34 @@ const cron = require('node-cron');
 
 
 router.post("/addCustomer", async (req, res) => {
-  console.log('register api');
+  let attr_arr = [];
   let required = [];
   if (!req.body.name) required.push("name");
   if (!req.body.email) required.push("email");
   if (!req.body.phone) required.push("phone");
   if (!req.body.gender) required.push("gender");
   if (!req.body.custom) required.push("custom");
-
   if (required.length === 0) {
+    for (let index = 1; index <= 10; index++) {
+      if(req.body['attr_value_'+index] && req.body['attr_value_'+index] != ""){
+        var attr_nm = "attr_"+index;
+        var attr_vl = req.body['attr_value_'+index];
+        if(attr_vl && attr_vl != "")
+        {
+          let attr = {
+            attr_name: attr_nm,
+            attr_value: attr_vl,
+          }
+          attr_arr.push(attr);
+        }
+      }
+    }
       let customer = { 
         name: req.body.name, 
         phone: req.body.phone, 
         email: req.body.email, 
         custom: req.body.custom, 
+        attribute : attr_arr,
         gender: req.body.gender 
       };
       let result = await customerActivity.addcustomer(customer);
@@ -60,6 +74,7 @@ var task = cron.schedule('0 */1 * * *', async (req, res) => {
       userPhone: result.result[randNumber].phone, 
       message: 'Service message notification'
     };
+    //============== send message functionlity will be added ===========
     let res = await messageActivity.addMessage(message_obj);
   }
 });
