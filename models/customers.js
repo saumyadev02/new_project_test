@@ -19,6 +19,12 @@ const customerSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  attribute: [
+    {
+      attr_name : { type: String },
+      attr_value : { type: String }
+    }
+  ],
   gender: {
     type: String,
     required: false,
