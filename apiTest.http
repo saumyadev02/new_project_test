@@ -31,4 +31,7 @@ content-type: application/json
 POST http://localhost:2021/api/sendNotificationCustomer
 content-type: application/json
 
+###
+POST http://localhost:2021/test_check
+content-type: application/json
 

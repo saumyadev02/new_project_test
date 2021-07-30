@@ -16,6 +16,14 @@ app.use(function (req, res, next) {
 });
 app.use(cors());
 
+app.post("/test_check", async (req, res) => {
+  obj = {
+    status: "success",
+    message: "check test",
+    };
+res.json(obj);
+});
+
 mongoose.connect("mongodb://localhost:27017/project1", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
